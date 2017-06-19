@@ -10,7 +10,7 @@ RUN wget http://download.savannah.gnu.org/releases/quagga/quagga-0.99.23.tar.gz
 RUN tar zxvf quagga-0.99.23.tar.gz
 WORKDIR /quagga-0.99.23
 RUN patch -p1 < /tmp/change.diff
-RUN ./configure --enable-fpm --prefix=/usr
+RUN ./configure --enable-multipath=0 --enable-fpm --prefix=/usr
 RUN make
 RUN make install
 
